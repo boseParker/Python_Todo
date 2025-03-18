@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo</title>
+    {% load static %}
+    {% load django_bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+
+</head>
+<body>
+    {% block content%}
+    <div class="bg-dark p-4">
+        <h1 class="text-light ms-5">Todo!</h1>
+    </div>
+
+    <form action="addData" method="post" class="mt-5 pt-5" autocomplete="off">
+        {% csrf_token %}
+        <label for="task">Tasks</label>
+        <input type="text" name="task"/>
+        <input type="submit" value="add" class="btn btn-success">
+    </form>
+
+
+    {% if myData %}
+    <div class="">
+        <table class="table table-bordered text-center">
+            <tr>
+                <th>
+                    S no
+                </th>
+                <th>
+                    Tasks
+                </th>
+                <th>
+                    Update
+                </th>
+                <th>
+                    Delete
+                </th>
+            </tr>
+            {% for data in myData %}
+            <tr>
+                <td>
+                    {{forloop.counter}}
+                </td>
+                <td>
+                    {{data.Task}}
+                </td>
+                <td>
+                    <a href="updateData/{{data.id}}" class="btn btn-success">Update</a>
+                   
+                </td>
+                <td>
+                    <a href="deleteData/{{data.id}}" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+
+        {% endfor %}
+
+        </table>
+        
+    </div>
+    {% endif %}
+    {% endblock %}
+</body>
+</html>

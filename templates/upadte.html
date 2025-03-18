@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UpdatePage</title>
+</head>
+<body>
+    <form action="/updateData/{{myData.id}}" method="post" class="mt-5 pt-5" autocomplete="off">
+        {% csrf_token %}
+        <label for="task">Tasks</label>
+        <input type="text" name="task" value="{{myData.Task}}"/>
+        <input type="submit" value="update" class="btn btn-primary">
+    </form>
+</body>
+</html>
