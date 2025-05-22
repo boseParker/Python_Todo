@@ -1,16 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
+    {% load django_bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UpdatePage</title>
+    
 </head>
 <body>
-    <form action="/updateData/{{myData.id}}" method="post" class="mt-5 pt-5" autocomplete="off">
+    <form action="/updateData/{{myData.id}}" method="post" class="container m-auto pt-5 d-flex flex-column gap-3" autocomplete="off">
         {% csrf_token %}
+        <div>
         <label for="task">Tasks</label>
         <input type="text" name="task" value="{{myData.Task}}"/>
+        </div>
+        <div>
+          <label for="description">Description</label>
+          <input type="text" name="description" value="{{myData.Description}}"/>
+        </div>
+        <div>
         <input type="submit" value="update" class="btn btn-primary">
+        </div>
     </form>
 </body>
 </html>

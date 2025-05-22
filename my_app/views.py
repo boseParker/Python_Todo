@@ -13,9 +13,10 @@ def addData(request):
 
     if request.method == 'POST':
         task = request.POST['task']
-
+        description=request.POST['description']
         myData = Datas()
         myData.Task = task 
+        myData.Description=description
         myData.save()
 
         return redirect('home')
@@ -25,7 +26,9 @@ def updateData(request,id):
     myData=Datas.objects.get(id=id)
     if request.method=='POST':
         task=request.POST['task']
+        description=request.POST['description']
         myData.Task=task
+        myData.Description=description
         myData.save()
         return redirect('home')
     return render(request,'upadte.html',{'myData':myData})
