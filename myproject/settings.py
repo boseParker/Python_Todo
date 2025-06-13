@@ -22,7 +22,7 @@ SECRET_KEY = 'django-insecure-r1)#*x&_qpn=0qll-o)e=@8_v162k+snxcyk3)eofzq^e!0#zy
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False  # Set to False for production
 
-ALLOWED_HOSTS = ['your-app-name.onrender.com', 'localhost', '127.0.0.1']  # Replace with your Render domain
+ALLOWED_HOSTS = ['python-todo-kazj.onrender.com', 'localhost', '127.0.0.1']  
 
 
 # Application definition
