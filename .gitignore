@@ -2,27 +2,24 @@
 __pycache__/
 *.py[cod]
 *.sqlite3
+
+# Django
+db.sqlite3
 *.log
+*.pot
 
 # Environment
 myenv/
 .env
 
-# Django
-db.sqlite3
-*.pot
-*.pyc
-
 # VS Code
 .vscode/
 
-# Static files
-staticfiles/
+# Static and media
 static/
-
-# Media
+staticfiles/
 media/
 
-# OS files
+# OS
 .DS_Store
 Thumbs.db
